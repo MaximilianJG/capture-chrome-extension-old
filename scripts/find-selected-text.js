@@ -42,8 +42,6 @@ const sendData = (data) => {
     body: JSON.stringify(params)
   }
 
-
-
   console.log(params)
 
   fetch(url, options)
