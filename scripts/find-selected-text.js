@@ -1,9 +1,4 @@
-// const selectText = () => {
-//   const selectedText = window.getSelection().toString();
-//   return selectedText
-// }
-
-const fetchData = () => {
+function fetchData() {
   const selectedText = window.getSelection().toString();
   const url_of_quote = window.location.href
   const title = document.querySelector("h1").innerText
@@ -21,8 +16,8 @@ const fetchData = () => {
 
 console.log(fetchData())
 
-const sendData = (data) => {
-  const url = "https://capture-maximilianjg.herokuapp.com/api/v1/quotes"
+function sendData(data) {
+  const url = 'http://localhost:3000/api/v1/quotes'
 
   const params = {
     quote: {
@@ -38,7 +33,7 @@ const sendData = (data) => {
 
   const options = {
     method: "POST",
-    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(params)
   }
 
@@ -49,4 +44,4 @@ const sendData = (data) => {
   .then(data => console.log(data))
 }
 
-sendData(fetchData())
+sendData(fetchData());
