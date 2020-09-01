@@ -1,8 +1,13 @@
-console.log("Chrome Extension go!")
+// console.log("Chrome Extension go!")
 
-window.addEventListener('mouseup', selectText)
+// const selectHighlighted = () => {
 
-function selectText() {
-  selectedText = window.getSelection().toString();
-  console.log(selectedText)
-}
+//   function selectText() {
+//     const selectedText = window.getSelection().toString();
+//     console.log(selectedText)
+//   }
+//   window.addEventListener('mouseup', selectText)
+// }
+
+// selectHighlighted()
+

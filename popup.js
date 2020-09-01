@@ -1,8 +1,10 @@
-function listenClick() {
-  const button = document.getElementById('hi');
+const listenClick = () => {
+  const button = document.getElementById('capture-this-btn');
   button.addEventListener('click', () => {
-    console.log('hi')
+    chrome.tabs.executeScript({
+      file: 'scripts/find-selected-text.js'
+    });
   })
 }
 
-listenClick();
+listenClick()
