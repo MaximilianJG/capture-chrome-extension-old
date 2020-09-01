@@ -4,7 +4,7 @@ function fetchData() {
   const title = document.querySelector("h1").innerText
   const website = window.location.hostname
   const url_of_website = url_of_quote
-
+// Todo: 1. Get the Date, 2. Get the Author, 3. Find a solution for Favicons
   return {
     content: selectedText,
     url_of_quote: url_of_quote,
@@ -16,7 +16,7 @@ function fetchData() {
 
 console.log(fetchData())
 
-function sendData(data) {
+function sendData (data) {
   const url = 'http://localhost:3000/api/v1/quotes'
 
   const params = {
