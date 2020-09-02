@@ -17,7 +17,7 @@ function fetchData() {
 console.log(fetchData())
 
 function sendData (data) {
-  const url = 'http://localhost:3000/api/v1/quotes'
+  const url = 'https://capture-maximilianjg.herokuapp.com/api/v1/quotes'
 
   const params = {
     quote: {
