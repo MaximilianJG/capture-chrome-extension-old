@@ -4,6 +4,7 @@ const listenClick = () => {
     chrome.tabs.executeScript({
       file: 'scripts/find-selected-text.js'
     });
+    window.close()
   })
 }
 

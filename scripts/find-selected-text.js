@@ -85,4 +85,3 @@ function highlight(colour) {
 }
 
 highlight('#FEFF05');
-
