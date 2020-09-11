@@ -11,3 +11,14 @@
 
 // selectHighlighted()
 
+chrome.storage.sync.get(['authenticationToken'], function(result) {
+  console.log('Value currently is ' + result.authenticationToken);
+  const authenticationTokenValue = result.authenticationToken
+  console.log(authenticationTokenValue)
+});
+
+const value = "hello"
+
+chrome.storage.sync.set({authenticationToken: value}, function() {
+  console.log('Value is set to ' + value);
+});

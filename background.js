@@ -9,3 +9,13 @@
 //   selectText()`
 //   });
 // });
+
+
+
+
+// const hello = () => {
+//   console.log("hello")
+// }
+
+const cookie = chrome.cookies.getAll({"domain": "localhost"}, function (cookies) { console.log(cookies[0]) })
+
