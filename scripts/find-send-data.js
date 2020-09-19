@@ -14,34 +14,58 @@ function fetchData() {
   }
 }
 
-console.log(fetchData())
+// chrome.runtime.onMessage.addListener(MessageReceived)
+//     function MessageReceived(message, sender, reply) {
+// console.log(message)
+// };
 
-function sendData (data) {
-  const url = 'https://capture-maximilianjg.herokuapp.com/api/v1/quotes'
+chrome.runtime.onMessage.addListener(MessageReceived)
+    function MessageReceived(message) {
+      const cookie = message
+      console.log(cookie)
+};
 
-  const params = {
-    quote: {
-      content: data.content,
-      url_of_quote: data.url_of_quote,
-    },
-    source: {
-      title: data.title,
-      website: data.website,
-      url_of_website: data.url_of_website
-    }
-  }
+// console.log(fetchData())
 
-  const options = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(params)
-  }
+// function sendData (data) {
+//   // const url = 'https://capture-maximilianjg.herokuapp.com/api/v1/quotes'
+//   const url = 'localhost:3000/api/v1/quotes'
 
-  console.log(params)
+//   const params = {
+//     quote: {
+//       content: data.content,
+//       url_of_quote: data.url_of_quote,
+//     },
+//     source: {
+//       title: data.title,
+//       website: data.website,
+//       url_of_website: data.url_of_website
+//     }
+//   }
 
-  fetch(url, options)
-  .then(response => response.json())
-  .then(data => console.log(data))
-}
+//   const options = {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json", "Cookie": "" },
+//     body: JSON.stringify(params)
+//   }
 
-sendData(fetchData());
+//   console.log(params)
+
+//   fetch(url, options)
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+// }
+
+// sendData(fetchData());
+
+//_________________________________________________ THIS IS SHIT:
+
+// browser.runtime.getBackgroundPage()
+// console.log(cookie)
+
+// chrome.runtime.onMessage.addListener(gotMessage)
+
+// function gotMessage(message, sender, sendResponse) {
+//   console.log(message)
+// }
+
