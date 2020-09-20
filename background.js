@@ -30,6 +30,11 @@ function getCookie() {
 
 }
 
+// function getCookie() {
+//   const cookie = chrome.cookies.getAll({"domain": "capture-maximilianjg.herokuapp.com", "name": "_capture_session"}, function (cookies) { chrome.runtime.sendMessage(cookies[0]) })
+
+// }
+
 // chrome.runtime.onMessage.addListener((message, sender, reply) => {
 //   const cookie = chrome.cookies.getAll({"domain": "localhost", "name": "_capture_session"}, function (cookies) { console.log(cookies[0]) })
 // });
