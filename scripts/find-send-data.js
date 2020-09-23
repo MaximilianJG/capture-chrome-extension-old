@@ -21,6 +21,7 @@ chrome.runtime.onMessage.addListener(MessageReceived)
       console.log(cookie)
       const apiCookieHeader = `${cookie.name}=${cookie.value}`
       console.log(apiCookieHeader)
+      console.log(cookie.value)
 
       console.log(fetchData())
 
@@ -29,6 +30,9 @@ chrome.runtime.onMessage.addListener(MessageReceived)
         const url = 'http://localhost:3000/api/v1/quotes'
 
         const params = {
+          user: {
+            user_id: cookie.value
+          },
           quote: {
             content: data.content,
             url_of_quote: data.url_of_quote,
@@ -42,7 +46,7 @@ chrome.runtime.onMessage.addListener(MessageReceived)
 
         const options = {
           method: "POST",
-          headers: { 'Content-Type': 'application/json', 'Cookie': apiCookieHeader },
+          headers: { 'Content-Type': 'application/json', Cookie: apiCookieHeader },
           body: JSON.stringify(params)
         }
 
