@@ -4,13 +4,18 @@ function fetchData() {
   const title = document.querySelector("h1").innerText
   const website = window.location.hostname
   const url_of_website = url_of_quote
+  const photo_url = document.getElementsByTagName('img')
+  const source_content = document.getElementsByTagName('p')
+
 // Todo: 1. Get the Date, 2. Get the Author, 3. Find a solution for Favicons
   return {
     content: selectedText,
     url_of_quote: url_of_quote,
     title: title,
     website: website,
-    url_of_website: url_of_website
+    url_of_website: url_of_website,
+    photo_url: photo_url[0].currentSrc,
+    source_content: source_content
   }
 }
 
@@ -40,7 +45,11 @@ chrome.runtime.onMessage.addListener(MessageReceived)
           source: {
             title: data.title,
             website: data.website,
-            url_of_website: data.url_of_website
+            url_of_website: data.url_of_website,
+            content: data.source_content
+          },
+          photo: {
+            photo_url: data.photo_url
           }
         }
 
